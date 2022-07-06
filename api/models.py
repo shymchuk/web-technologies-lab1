@@ -14,14 +14,14 @@ class PhoneNumber(models.Model):
     )
 
     class Meta:
-        ordering = ('-number',)
+        ordering = ('number',)
 
 
-class Person:
+class Person(models.Model):
     surname = models.TextField(
         unique=True
     )
     phone = models.ManyToManyField(PhoneNumber)
 
     class Meta:
-        ordering = ('-surname', )
+        ordering = ('surname', )
